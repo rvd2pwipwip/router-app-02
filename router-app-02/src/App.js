@@ -3,9 +3,10 @@ import { Route, Switch, Redirect } from "react-router-dom";
 
 import "./App.css";
 import NavBar from "./components/NavBar";
-import Courses from "./components/Courses";
-import Downloads from "./components/Downloads";
-import Home from "./components/Home";
+import Courses from "./pages/Courses";
+import Downloads from "./pages/Downloads";
+import Home from "./pages/Home";
+import Workshops from "./pages/Workshops";
 
 class App extends Component {
   render() {
@@ -17,6 +18,7 @@ class App extends Component {
             <Route path="/home" component={Home} />
             <Route path="/courses" component={Courses} />
             <Route path="/downloads" component={Downloads} />
+            <Route path="/workshops" component={Workshops} />
             <Redirect exact from="/" to="/home" />
           </Switch>
         </div>
