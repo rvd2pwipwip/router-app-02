@@ -3,10 +3,20 @@ import { Link } from "react-router-dom";
 import "./NavBar.css";
 
 class NavBar extends Component {
-  state = {};
+  state = { hasScrolled: false };
+
+  handleScroll = () => {
+    window.pageYOffset > 50
+      ? this.setState({ hasScrolled: true })
+      : this.setState({ hasScrolled: false });
+  };
+
+  componentDidMount() {
+    window.addEventListener("scroll", this.handleScroll);
+  }
   render() {
     return (
-      <div className="NavBar">
+      <div className={this.state.hasScrolled ? "NavBar Scrolled" : "NavBar"}>
         <div className="NavBarGroup">
           <Link to="/">
             <img

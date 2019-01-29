@@ -2,6 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import "./Home.css";
 import Card from "../components/Card";
+import Section from "../components/Section";
 
 const Home = () => (
   <div>
@@ -95,6 +96,12 @@ const Home = () => (
         />
       </div>
     </div>
+    <Section
+      image={require("../images/wallpaper2.jpg")}
+      logo={require("../images/logo-react.png")}
+      title="React for Designers"
+      text="Lorem Ipsum dolor sit amet."
+    />
   </div>
 );
 
