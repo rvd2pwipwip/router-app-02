@@ -4,6 +4,8 @@ import "./Home.css";
 import Card from "../components/Card";
 import Section from "../components/Section";
 import Wave from "../components/Wave";
+import staticData from "../staticData.json";
+import Cell from "../components/Cell";
 
 const Home = () => (
   <div>
@@ -84,6 +86,9 @@ const Home = () => (
       title="React for Designers"
       text="Learn how to build a modern site using React and the most efficient libraries to get your site/product online. Get familiar with components, CSS grid, animations, interactions, dynamic data with Contentful and deploying your site with Netlify."
     />
+    {staticData.cells.map(i => (
+      <Cell image={i.image} title={i.title} />
+    ))}
   </div>
 );
 
