@@ -6,6 +6,27 @@ import Section from "../components/Section";
 import Wave from "../components/Wave";
 import staticData from "../staticData.json";
 import Cell from "../components/Cell";
+import styled from "styled-components";
+
+const SectionCaption = styled.p`
+  color: #94a4ba;
+  font-weight: 600;
+  font-size: 18px;
+  text-transform: uppercase;
+  text-align: center;
+`;
+
+const SectionCellGroup = styled.div`
+  max-width: 800px;
+  margin: 0 auto 100px;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-column-gap: 20px;
+  @media (max-width: 800px) {
+    grid-template-columns: repeat(1, 1fr);
+    padding: 0 20px;
+  }
+`;
 
 const Home = () => (
   <div>
@@ -86,9 +107,13 @@ const Home = () => (
       title="React for Designers"
       text="Learn how to build a modern site using React and the most efficient libraries to get your site/product online. Get familiar with components, CSS grid, animations, interactions, dynamic data with Contentful and deploying your site with Netlify."
     />
-    {staticData.cells.map(i => (
-      <Cell image={i.image} title={i.title} />
-    ))}
+
+    <SectionCaption>12 sections - 6 hours</SectionCaption>
+    <SectionCellGroup>
+      {staticData.cells.map(i => (
+        <Cell key={i.title} image={i.image} title={i.title} />
+      ))}
+    </SectionCellGroup>
   </div>
 );
 
